@@ -5,9 +5,8 @@ import os
 
 import pandas as pd
 from sklearn.externals import joblib
-
-
 # TODO: Import any additional libraries you need to define a model
+from sklearn.naive_bayes import MultinomialNB
 
 
 # Provided model load function
@@ -33,7 +32,8 @@ if __name__ == '__main__':
     # Here we set up an argument parser to easily access the parameters
     parser = argparse.ArgumentParser()
 
-    # SageMaker parameters, like the directories for training data and saving models; set automatically
+    # SageMaker parameters, like the directories for training data and saving
+    # models; set automatically
     # Do not need to change
     parser.add_argument('--output-data-dir', type=str, default=os.environ['SM_OUTPUT_DATA_DIR'])
     parser.add_argument('--model-dir', type=str, default=os.environ['SM_MODEL_DIR'])
@@ -55,9 +55,10 @@ if __name__ == '__main__':
     ## --- Your code here --- ##
 
     ## TODO: Define a model
-    model = None
+    model = MultinomialNB()
 
     ## TODO: Train the model
+    model.fit(train_x, train_y)
 
     ## --- End of your code  --- ##
 
