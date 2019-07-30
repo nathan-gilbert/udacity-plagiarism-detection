@@ -49,8 +49,8 @@ if __name__ == '__main__':
     train_data = pd.read_csv(os.path.join(training_dir, "train.csv"), header=None, names=None)
 
     # Labels are in the first column
-    train_y = train_data.iloc[:,0]
-    train_x = train_data.iloc[:,1:]
+    train_y = train_data.iloc[:, 0]
+    train_x = train_data.iloc[:, 1:]
 
     ## --- Your code here --- ##
 
