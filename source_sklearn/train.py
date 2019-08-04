@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.externals import joblib
 # TODO: Import any additional libraries you need to define a model
 from sklearn.naive_bayes import MultinomialNB
+from sklearn import svm
 
 
 # Provided model load function
@@ -55,7 +56,10 @@ if __name__ == '__main__':
     ## --- Your code here --- ##
 
     ## TODO: Define a model
-    model = MultinomialNB()
+    ## First approach, naive bayes
+    # model = MultinomialNB()
+    # Second approach, support vector machine
+    model = svm.SVC(gamma='scale')
 
     ## TODO: Train the model
     model.fit(train_x, train_y)
